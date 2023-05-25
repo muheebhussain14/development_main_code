@@ -1,0 +1,116 @@
+/* subscription product */
+
+.single-product-page.product-type-subscription .woodmart-compare-btn,
+.single-product-page.product-type-subscription .product_meta,
+.single-product-page.product-type-subscription
+  .product-image-summary-inner
+  > .product-images,
+.single-product-page.product-type-subscription .product-tabs-wrapper {
+  display: none !important;
+}
+.single-product-page.product-type-subscription .single_add_to_cart_button {
+  background: #000 !important;
+  color: #d6f241 !important;
+  min-width: 140px;
+}
+.single-product-page.product-type-subscription .woocommerce-product-details__short-description {
+    font-size: 18px;
+}
+.single-product-page.product-type-subscription
+  .product-image-summary-inner
+  > div {
+  max-width: 100% !important;
+  flex: 1 1 50% !important;
+}
+
+/* custom field product with styling */
+
+:root {
+  --primary-font: "Belleza";
+}
+
+#product-358 .product-image-summary-inner > .product-images {
+  display: none;
+}
+#product-358 .product-tabs-wrapper {
+  display: none !important;
+}
+#product-358 .product-image-summary-inner .summary.entry-summary {
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+}
+#product-358 button.single_add_to_cart_button {
+  margin: 10px 0 20px !important;
+}
+#product-358 .woocommerce-variation-description h4 {
+  margin-bottom: 10px !important;
+  font-size: 20px;
+  font-family: var(--primary-font);
+}
+#product-358 .woocommerce-variation-description p {
+  font-size: 18px !important;
+  font-family: var(--primary-font);
+}
+#product-358 .woocommerce-variation-description {
+  color: #181818 !important;
+}
+#product-358 .woocommerce-variation-description {
+  color: #181818 !important;
+}
+#product-358 .woocommerce-variation-description ul li {
+  font-family: var(--primary-font);
+  font-size: 16px;
+  list-style: disc;
+  margin-bottom: 5px;
+}
+#product-358 .woocommerce-variation-description ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+#product-358 .single_variation_wrap * {
+  font-size: 16px;
+  font-family: var(--primary-font) !important;
+}
+#product-358 select#course-type {
+  font-size: 18px !important;
+  background-color: #35a99b !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+  border: none !important;
+  min-height: 55px;
+}
+#product-358 .woocommerce-variation-availability {
+  display: none !important;
+}
+#product-358 .single_variation_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+#product-358 .single_variation_wrap > div {
+  flex: 1 1 50%;
+}
+#product-358 span.price .amount * {
+  font-size: 22px !important;
+}
+#product-358 .variations_form.cart {
+  margin-bottom: 20px !important;
+}
+#product-358 .single-breadcrumbs-wrapper,
+#product-358 .woodmart-compare-btn,
+#product-358 .woodmart-wishlist-btn,
+#product-358 .product_meta,
+#product-358 .product-share {
+  display: none !important;
+}
+#product-358 .variations tbody > tr {
+  display: flex;
+  flex-wrap: wrap;
+}
+#product-358 table.variations td.label label {
+  font-size: 20px;
+  margin-bottom: 15px !important;
+}
+#product-358 .wapf-field-label label span {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}

@@ -1,0 +1,73 @@
+/* add this in row html */
+<div class="badges"></div>
+/* and then image gallery  */
+
+
+/* add css  */
+.badges img {   
+  width: 130px;
+  object-fit: contain;
+  margin: 0px 25px;
+}
+.badges {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  will-change: transform;
+  -webkit-animation: marquee 15s linear infinite;
+  animation: marquee 15s linear infinite;
+}
+@media (max-width: 1024px) {
+  .badges {
+    -webkit-animation: marquee 10s linear infinite;
+    animation: marquee 10s linear infinite;
+  }
+}
+.badges-box {
+  overflow-x: hidden;
+}
+.cs-grid {
+  display: none;
+}
+@-webkit-keyframes marquee {
+  from {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee {
+  from {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+.customer-content-row .img-style .vc_single_image-wrapper,
+.customer-content-row .img-style figure,
+.customer-content-row .img-style img {
+  width: 100%;
+  border-radius: 25px;
+}
+.customer-content-row .woodmart-title-container strong {
+  color: #32b868 !important;
+}
+
+
+/* jquery */
+//BADGES MARQUEE
+jQuery(document).ready(function() {
+	jQuery('.cs-grid img').each(function() {
+		jQuery(this).appendTo('.badges');
+	});
+});

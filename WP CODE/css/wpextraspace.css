@@ -1,3 +1,9 @@
+/* HEADER */
+
+/* HOMEPAGE */
+
+/* FOOTER */
+
 /* EXTRA SPACING */
 
 .main-page-wrapper {
@@ -5,6 +11,10 @@
 }
 .site-content {
   margin-bottom: 0;
+}
+.search .site-content,
+.single .site-content {
+  padding-bottom: 40px !important;
 }
 .wd-prefooter {
   padding-bottom: 0 !important;
@@ -20,8 +30,29 @@
   display: none;
 }
 
+/* IMG STYLE  */
+
+.img-style .vc_single_image-wrapper,
+.img-style figure,
+.img-style img {
+  width: 100%;
+}
+
 /* RESPONSIVE */
 
+@media (max-width: 1199px) {
+  .footer-logo,
+  .footer-title,
+  .footer-text,
+  .footer-menu ul li,
+  .social-icons {
+    text-align: center !important;
+  }
+  .list-style li {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
 @media (max-width: 1024px) {
 }
 

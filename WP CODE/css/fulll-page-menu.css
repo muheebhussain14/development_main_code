@@ -1,0 +1,39 @@
+.full-screen-wrapper {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: -20px !important;
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.full-screen-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 400;
+  visibility: hidden;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  opacity: 0;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+.full-screen-wrapper ul li a {
+  position: relative;
+  max-width: 80% !important;
+}
+.full-screen-wrapper ul.wd-nav > li > a {
+  justify-content: start !important;
+  margin: 0;
+}
+.full-screen-wrapper ul.wd-nav {
+  padding-left: 8%;
+}

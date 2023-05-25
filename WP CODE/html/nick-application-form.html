@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <style type="text/css">
+        .main-page-wrapper>.container {
+            max-width: 100%;
+        }
+
+        .application-form-title>h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: #FFC700;
+            border-radius: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 6px;
+        }
+
+        .application-form-title>h2 {
+            font-family: 'Leluja Original'
+                font-style: normal;
+            font-weight: normal;
+            font-size: 48px;
+            color: #333333;
+            text-align: center;
+        }
+
+        .application-form-title-after,
+        .application-form-title {
+            margin-bottom: 20px;
+        }
+
+        .application-form-title-after>p:first-child {
+            font-family: 'Merriweather';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+
+        .application-form-title-after>p:nth-child(2) {
+            font-family: 'Merriweather';
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            text-align: center;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        .application-form-title>p {
+            font-family: 'Merriweather';
+            font-weight: normal;
+            font-size: 16px;
+            color: #333333;
+        }
+
+        .ap-field input[type="text"],
+        .ap-field input[type="tel"],
+        .ap-field input[type="email"],
+        .ap-field input[type="file"],
+        .ap-field input[type="date"] {
+            background-color: #EFEFEF !important;
+            border-color: #EFEFEF !important;
+            border-radius: 50px !important;
+            min-height: 55px !important;
+            padding: 10px 20px !important;
+            font-size: 16px !important;
+            color: #333 !important;
+            width: 100% !important;
+        }
+
+        .ap-field input[type="file"] {
+            padding-top: 15px !important;
+            background-color: #7D7D7D !important;
+            width: 100% !important;
+            color: #fff !important;
+        }
+
+        .ap-field textarea {
+            background-color: #EFEFEF !important;
+            border-color: #EFEFEF !important;
+            border-radius: 25px !important;
+            padding: 10px 20px !important;
+            font-size: 16px !important;
+            color: #333 !important;
+            resize: none;
+        }
+
+        .ap-field,
+        .ap-radio-wrap {
+            margin-bottom: 20px !important;
+        }
+
+        .ap-radio>label {
+            font-family: 'Merriweather' !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-size: 14px !important;
+            color: #333333 !important;
+            position: relative !important;
+            padding-left: 35px !important;
+            cursor: pointer !important;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            display: inline-block !important;
+            margin-bottom: 5px !important;
+        }
+
+        .ap-radio>label:not(:last-child) {
+            margin-right: 25px !important;
+        }
+
+        .ap-radio>label input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+
+        .ap-radio>label:hover input~.checkmark {
+            background-color: #ccc;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .ap-radio>label input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .ap-radio>label .checkmark:after {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #7E7E7E;
+        }
+
+        .ap-label {
+            font-family: 'Merriweather' !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-size: 16px !important;
+            color: #333333 !important;
+            margin-bottom: 15px;
+            cursor: inherit !important;
+        }
+
+        .ap-section-intro>h6 {
+            font-family: 'Merriweather' !important;
+            font-size: 18px !important;
+            font-style: normal !important;
+            font-weight: 700 !important;
+            margin-bottom: 5px !important;
+        }
+
+        .ap-section-intro>p {
+            font-family: 'Merriweather' !important;
+            font-size: 14px !important;
+            font-style: normal !important;
+            font-weight: 400 !important;
+            color: #333 !important;
+        }
+
+        .ap-section-intro {
+            margin-bottom: 20px;
+        }
+
+        .row-increment-btn {
+            text-align: center;
+        }
+
+        .row-increment-btn>button>img {
+            width: 16px;
+            filter: invert(1);
+        }
+
+        .row-increment-btn>button {
+            display: inline-block;
+            background-color: #538FEA;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            padding: 0;
+        }
+
+        .ap-section-sep {
+            margin-bottom: 20px;
+        }
+
+        .ap-section-sep>p {
+            font-family: 'Merriweather';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #333333;
+        }
+
+        .simple-text>p {
+            font-family: 'Merriweather';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .mb-35 {
+            margin-bottom: 35px !important;
+        }
+
+        p.font-16 {
+            font-size: 16px !important;
+        }
+
+        ul.ap-list>li:before {
+            content: '\f00c';
+            font-weight: 900;
+            font-family: 'Font Awesome 5 Free';
+            margin-right: 5px;
+        }
+
+        ul.ap-list>li:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        ul.ap-list>li {
+            font-family: 'Merriweather';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            color: #333333;
+        }
+
+        ul.ap-list {
+            margin-bottom: 15px;
+            padding-left: 15px;
+        }
+
+        .agreement-text>p:nth-child(1),
+        .agreement-text>p:nth-child(2) {
+            font-family: 'Basically A Sans Serif';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+
+        .agreement-text>p:last-child {
+            font-family: 'Merriweather';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .ap-questionnaire-wrapper {
+            background-color: #FAFAFA;
+            padding-top: 25px;
+            padding-bottom: 35px;
+            margin-bottom: 35px;
+        }
+
+        .submit-btn-wrapper {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .submit-btn-wrapper>input[type=submit] {
+            background-color: #538FEA !important;
+            font-family: 'Merriweather' !important;
+            font-style: normal !important;
+            font-weight: bold !important;
+            font-size: 16px !important;
+            text-align: center !important;
+            text-transform: uppercase !important;
+            color: #FFFFFF !important;
+            max-width: 150px !important;
+            width: 100% !important;
+            height: 50px !important;
+            border-radius: 7px !important;
+        }
+
+        label.error {
+            color: red;
+        }
+
+        div#Fsignature,
+        div#Msignature {
+            background-color: #EFEFEF;
+            padding: 10px;
+            box-shadow: 0 0 30px 2px #eee !important;
+        }
+
+        div#Fsignature button,
+        div#Msignature button {
+            background-color: #538FEA !important;
+            color: #fff !important;
+            display: block;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .row.align-items-center {
+            align-items: center;
+        }
+
+        select.select_schools {
+            background-color: #EFEFEF !important;
+            border-color: #EFEFEF !important;
+            border-radius: 50px !important;
+            min-height: 55px !important;
+            padding: 10px 20px !important;
+            font-size: 16px !important;
+            color: #333 !important;
+            width: 100% !important;
+        }
+    </style>
+
+    <div class="application-form-wrapper">
+        <form id="application" enctype="multipart/form-data">
+            <div class="container">
+                <div class="application-form-description">
+
+                    <div class="application-form-title">
+                        <h2>Application for Admission</h2>
+                        <div class="application-form-title-after">
+                            <p>Nick's Christian Academy</p>
+                            <p>(for NEW enrollment)</p>
+                        </div>
+                        <p>
+                            PLEASE NOTE: Your application, is required to begin the admissions process for your child.
+                            Receipt of these
+                            items,
+                            however, does not
+                            guarantee the enrollment of your child(ren).
+                        </p>
+                    </div>
+
+                    <div class="application-form">
+                        <!-- General Section -->
+                        <div class="ap-general-section mb-35">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="ap-field">
+                                        <input type="text" name="date_of_application" placeholder="Date of Application"
+                                            class="date" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="ap-field">
+                                        <select name="select_school" id="" class="select_schools">
+                                            <option value="" selected="selected">Nick's Christian Academy</option>
+                                            <option value="">Nick's Place</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="ap-radio-wrap">
+                                        <label class="ap-label">Do you intend to apply for financial assistance to help
+                                            with
+                                            your tuition expenses at Nick's Christian Academy?</label>
+                                        <div class="ap-radio">
+                                            <label>Yes
+                                                <input type="radio" value="Yes" checked="checked"
+                                                    name="do_you_intend_to_apply_for_financial_assistance_to_help_with_your_tuition_expenses_at_the_school">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label>No
+                                                <input type="radio" value="No"
+                                                    name="do_you_intend_to_apply_for_financial_assistance_to_help_with_your_tuition_expenses_at_the_school">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Intro Section -->
+                        <div class="ap-intro-section mb-35">
+                            <div class="ap-section-intro">
+                                <h6>Names of Children Applying For Admission</h6>
+                                <p>Please begin with the oldest child to the youngest. Please use full legal names.</p>
+                            </div>
+                            <div class="row ap-row-increment">
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="ap-field">
+                                        <input type="text" name="children[1][full_legal_name]"
+                                            placeholder="Full Legal Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="ap-field">
+                                        <input type="text" name="children[1][preferred_name]"
+                                            placeholder="Preferred Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="children[1][date_of_birth]" placeholder="Date of Birth"
+                                            class="date" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="children[1][sex]" placeholder="Sex" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="children[1][grade_entering]"
+                                            placeholder="Grade Entering" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="children-data"></div>
+                            <div class="row-increment-btn">
+                                <button type="button" class="children-btn">
+                                    <img src="<?php echo site_url('wp-content/uploads/2023/04/plus-solid.svg') ?>"
+                                        alt="+">
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Family Section -->
+                        <div class="ap-intro-section mb-35">
+                            <div class="ap-section-intro">
+                                <h6>Family Information</h6>
+                                <p>Please provide ALL information for BOTH parents.</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="ap-field">
+                                        <input type="text" name="basic_street_address_1" placeholder="Street Address"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="ap-field">
+                                        <input type="text" name="basic_address_2" placeholder="Address 2">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="ap-field">
+                                        <input type="text" name="basic_city" placeholder="City" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="ap-field">
+                                        <input type="text" name="basic_state" placeholder="State" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="ap-field">
+                                        <input type="text" name="basic_zip" pattern="[0-9]*" placeholder="Zip" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="tel" name="basic_home_phone" placeholder="Home Phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                         <div class="ap-section-sep">
+                                <p>Father</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="ap-field">
+                                        <input type="text" name="father_name" placeholder="Father's Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="ap-field">
+                                        <input type="email" name="father_email" placeholder="Father's Email" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="father_street_address" placeholder="Street Address"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="ap-field">
+                                        <input type="text" name="father_city" placeholder="City" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="ap-field">
+                                        <input type="text" name="father_state" placeholder="State" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="ap-field">
+                                        <input type="text" name="father_zip" pattern="[0-9]*" placeholder="Zip" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="tel" name="father_mobile_phone" placeholder="Mobile Phone" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="father_employer" placeholder="Father’s Employer" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="tel" name="father_work_phone" placeholder="Work Phone" required>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="ap-section-sep">
+                                <p>Parents</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="ap-field">
+                                        <input type="text" name="mother_name" placeholder="Parent's Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="ap-field">
+                                        <input type="email" name="mother_email" placeholder="Parent's Email" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="mother_street_address" placeholder="Street Address"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="ap-field">
+                                        <input type="text" name="mother_city" placeholder="City" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="ap-field">
+                                        <input type="text" name="mother_state" placeholder="State" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="ap-field">
+                                        <input type="text" name="mother_zip" pattern="[0-9]*" placeholder="Zip"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="tel" name="mother_mobile_phone" placeholder="Mobile Phone"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="mother_employer" placeholder="Parent’s Employer"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="tel" name="mother_work_phone" placeholder="Work Phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="simple-text">
+                                <p>If the child’s parents are not married, please give the name and address of the
+                                    non-custodial
+                                    parent on a separate sheet
+                                    of paper and indicate whether the non-custodial parent should receive information
+                                    about
+                                    the
+                                    child’s progress. Also
+                                    include information regarding living arrangements for the child and who will have
+                                    responsibility for payment of tuition.</p>
+                            </div>
+                        </div>
+                        <!-- Student Section -->
+                        <div class="ap-intro-section mb-35">
+                            <div class="ap-section-intro">
+                                <h6>Student Information</h6>
+                                <p>Please list the schools your child has previously attended beginning with the most
+                                    recent. If
+                                    more space is needed, please provide the information on a separate sheet of paper.
+                                </p>
+                            </div>
+                            <div class="row ap-row-increment">
+                                <div class="col-md-12">
+                                    <div class="row-counter">
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="student[1][child]" placeholder="Child" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="student[1][school_name]" placeholder="School Name"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="student[1][school_address]"
+                                            placeholder="School Address" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="student[1][school_mobile_phone]"
+                                            placeholder="Mobile Phone" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="student[1][school_date_from_to]"
+                                            placeholder="Dates (From/To)" class="date-from-to" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="ap-field">
+                                        <input type="text" name="student[1][school_grade_complete]"
+                                            placeholder="Grade Completed" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="student-data"></div>
+                            <div class="row-increment-btn">
+                                <button type="button" class="student-btn">
+                                    <img src="<?php echo site_url('wp-content/uploads/2023/04/plus-solid.svg') ?>"
+                                        alt="+">
+                                </button>
+                            </div>
+                        </div>
+                        <!-- General Questions Section -->
+                        <div class="ap-intro-section mb-35">
+                            <div class="ap-section-intro">
+                                <p class="font-16">
+                                    Nick's Christian Academy is not staffed to teach children with significant or
+                                    serious learning
+                                    disabilities or behavioral issues. We
+                                    would appreciate your assistance in answering the following questions
+                                    <strong>candidly
+                                        and
+                                        honestly as possible.</strong> (If more
+                                    than one child is applying, please note to which child you are referring.) Further
+                                    elaboration on your answers will take
+                                    place during the family interview.
+                                </p>
+                            </div>
+                            <div class="row ap-row-increment">
+                                <div class="col-md-12">
+                                    <label class="ap-label">
+                                        1. Does your child have any special learning needs (ADD, ADHD, dyslexia, etc.)
+                                        that
+                                        would require regular or special attention in a traditional classroom setting?
+                                        If
+                                        yes,
+                                        please explain.
+                                    </label>
+                                    <div class="ap-field">
+                                        <textarea name="does_your_child_have_any_special_learning_needs" cols="30"
+                                            rows="10" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="ap-label">
+                                        2. Has your child ever been referred for testing or placed in a special program?
+                                        If
+                                        yes,
+                                        please explain:
+                                    </label>
+                                    <div class="ap-field">
+                                        <textarea name="has_your_child_ever_been_referred_for_testing" cols="30"
+                                            rows="10" required></textarea>
+                                    </div>
+                                </div>
+                                <!--                             <div class="col-md-12">
+                                    <label class="ap-label">
+                                        3. Has your child ever seen or been referred to a counselor/doctor/psychiatrist for
+                                        any
+                                        type of social, behavioral, emotional, or mental issue? If yes, briefly state the
+                                        nature
+                                        of the issue:
+                                    </label>
+                                    <div class="ap-field">
+                                        <textarea name="has_your_child_ever_seen_or_been_referred_to_a_counselor" cols="30" rows="10" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="ap-label">
+                                        4. Has your child ever taken medication for a learning or behavioral issue? If yes,
+                                        please explain:
+                                    </label>
+                                    <div class="ap-field">
+                                        <textarea name="has_your_child_ever_taken_medication_for_a_learning" cols="30" rows="10" required></textarea>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-12">
+                                    <label class="ap-label">
+                                        3. Has your child ever experienced any disciplinary problems at a previous
+                                        school? (
+                                        i.e. Has a teacher or administrator ever contacted you regarding your child’s
+                                        behavior?)
+                                        If yes, please explain:
+                                    </label>
+                                    <div class="ap-field">
+                                        <textarea
+                                            name="has_your_child_ever_experienced_any_disciplinary_problems_at_a_previous_school"
+                                            cols="30" rows="10" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="ap-label">
+                                        4. Has your child ever repeated a grade for any reason? If yes, please explain:
+                                    </label>
+                                    <div class="ap-field">
+                                        <textarea name="has_your_child_ever_repeated_a_grade_for_any_reason"
+                                            cols="30"="10" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="ap-label">
+                                        5. Please describe any medical or health issues (heart, hearing difficulties,
+                                        speech
+                                        impediments, asthma, etc.) and any significant illnesses, diseases, conditions,
+                                        allergies, injuries, surgeries, or hospitalizations.
+                                    </label>
+                                    <div class="ap-field">
+                                        <textarea name="please_describe_any_medical_or_health_issues" cols="30"
+                                            rows="10" required></textarea>
+                                    </div>
+                                </div>
+                                <!--                             <div class="col-md-12">
+                                    <label class="ap-label">
+                                        8. Do you understand that before your child starts school at THE SCHOOL, the
+                                        parent(s)
+                                        must submit a Georgia Immunization Certificate (form #3231) or a valid medical
+                                        exemption
+                                        or a valid affidavit of religious exemption?
+                                    </label>
+                                    <div class="ap-field">
+                                        <textarea name="do_you_understand_that_before_your_child_starts_school_at_the_school" cols="30" rows="10" required></textarea>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <!-- Commitments Section -->
+                        <!--                     <div class="ap-intro-section mb-35">
+                            <div class="ap-section-intro">
+                                <h6>Educational Questions & Commitments</h6>
+                                <p>(If additional space is needed, please answer on an additional sheet of paper.)</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="ap-label">1. What do you believe the parents’ role is in the education of
+                                        their child(ren)? What is the school’s role?</label>
+                                    <div class="ap-field">
+                                        <textarea
+                                            name="what_do_you_believe_the_parents_role_is_in_the_education_of_their_childen" cols="30" rows="10" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="ap-radio-wrap">
+                                        <label class="ap-label">2. Have you read the current THE SCHOOL Parent/Student
+                                            Handbook (available on our website or from the school office)?</label>
+                                        <div class="ap-radio">
+                                            <label>Yes
+                                                <input type="radio" value="Yes" checked="checked"
+                                                    name="have_you_read_the_current_the_school_parent_Student_handbook">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label>No
+                                                <input type="radio" value="No"
+                                                    name="have_you_read_the_current_the_school_parent_Student_handbook">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="ap-label">3. Are there any points in our policies, mission, foundational
+                                        commitments, goals, or approach to education which are inconsistent with your
+                                        beliefs? If yes, please explain:</label>
+                                    <div class="ap-field">
+                                        <textarea name="are_there_any_points_or_approach_to_education_which_are_inconsistent_with_your_beliefs" cols="30" rows="10" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="ap-radio-wrap">
+                                        <label class="ap-label">4. Do you understand that some of the academic work that is
+                                            normally completed in the classroom in a conventional school must be completed
+                                            at home and agree to monitor completion of this work?</label>
+                                        <div class="ap-radio">
+                                            <label>Yes
+                                                <input type="radio" value="Yes" checked="checked" name="agree_to_monitor_completion_of_this_work">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label>No
+                                                <input type="radio" value="No" name="agree_to_monitor_completion_of_this_work">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- Include Section -->
+                        <!--                     <div class="ap-intro-section mb-35">
+                            <div class="ap-section-intro">
+                                <h6>TO MAKE THIS APPLICATION COMPLETE, PLEASE INCLUDE THE FOLLOWING:</h6>
+                                <p>For ALL students:</p>
+                            </div>
+                            <ul class="ap-list">
+                                <li>Completed Application for Admission</li>
+                                <li>Completed Supplemental Admissions Questionnaire</li>
+                                <li>$100 per family application fee (non-refundable).</li>
+                            </ul>
+                            <label class="ap-label">Additional documents for applicants entering 1st grade or above (not
+                                required for Pre-K & K):</label>
+                            <ul class="ap-list">
+                                <li>A copy of the most recent standardized test scores for each student applying (e.g.
+                                    Stanford Achievement Test or Iowa Test of Basic Skills, etc.)</li>
+                                <li>A copy of the report cards from the two most recent grading terms for each student
+                                    applying.</li>
+                            </ul>
+                            <div class="agreement-text">
+                                <p>YOUR APPLICATION WILL NOT BE PROCESSED UNTIL ALL OF THE ABOVE DOCUMENTS ARE RECEIVED.
+                                    THANK YOU.</p>
+                                <p>PARENTS WILL BE REQUIRED TO PROVIDE ADDITIONAL INFORMATION AND COMPLETED FORMS PRIOR TO
+                                    THE START OF THE SCHOOL YEAR
+                                    (I.E. PERMISSION SLIPS, EMERGENCY CONTACT INFORMATION, MEDICAL RELEASES, AND
+                                    IMMUNIZATION CERTIFICATES).</p>
+                                <p>My signature below herein evidences that the information in this application is correct
+                                    to the best of my understanding.
+                                    I also state that I have read and understand the foundational documents of THE SCHOOL
+                                    and agree to have my children
+                                    taught in accordance with these. I also agree to have my children abide the school’s
+                                    Code of Conduct. My signature below
+                                    also evidences that I have read the current Parent/Student Handbook and, if my child is
+                                    admitted to THE SCHOOL, agree to
+                                    faithfully and fully abide by the policies of the school as stated therein.</p>
+                            </div>
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
+
+            <!--         <div class="ap-questionnaire-wrapper">
+                <div class="container">
+                    
+                    <div class="application-form-title">
+                        <h2>Supplemental Admissions Questionnaire</h2>
+                        <p class="text-center">
+                            (To be completed after BOTH parents have read the Parent/Student Handbook. This is an "open book” questionnaire. You will find our answers on pages three and four.)
+                        </p>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="ap-field">
+                                <input type="text" name="name_of_parent" placeholder="Name of Parent(s)" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ap-field">
+                                <input type="text" name="date" placeholder="Date" class="date" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="ap-label">Do you fully support the following aspects of the school curriculum, policies and program?</label>
+                            <div class="ap-radio-wrap">
+                                <label class="ap-label">Learning Disability Policy</label>
+                                <div class="ap-radio">
+                                    <label>Yes
+                                        <input type="radio" value="Yes" checked="checked" name="learning_disability_policy">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>No
+                                        <input type="radio" value="No" name="learning_disability_policy">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>Qualified Answer
+                                        <input type="radio" value="No" name="learning_disability_policy">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="ap-radio-wrap">
+                                <label class="ap-label">Challenging Academics</label>
+                                <div class="ap-radio">
+                                    <label>Yes
+                                        <input type="radio" value="Yes" checked="checked" name="challenging_academics">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>No
+                                        <input type="radio" value="No" name="challenging_academics">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>Qualified Answer
+                                        <input type="radio" value="Qualified Answer" name="challenging_academics">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="ap-radio-wrap">
+                                <label class="ap-label">Uniform & Dress Code Policy</label>
+                                <div class="ap-radio">
+                                    <label>Yes
+                                        <input type="radio" value="Yes" checked="checked" name="uniform_dress_code_policy">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>No
+                                        <input type="radio" value="No" name="uniform_dress_code_policy">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>Qualified Answer
+                                        <input type="radio" value="Qualified Answer" name="uniform_dress_code_policy">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="ap-radio-wrap">
+                                <label class="ap-label">Discipline Policy</label>
+                                <div class="ap-radio">
+                                    <label>Yes
+                                        <input type="radio" value="Yes" checked="checked" name="discipline_policy">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>No
+                                        <input type="radio" value="No" name="discipline_policy">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>Qualified Answer
+                                        <input type="radio" value="Qualified Answer" name="discipline_policy">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="ap-radio-wrap">
+                                <label class="ap-label">Conflict Resolution</label>
+                                <div class="ap-radio">
+                                    <label>Yes
+                                        <input type="radio" value="Yes" checked="checked" name="conflict_resolution">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>No
+                                        <input type="radio" value="No" name="conflict_resolution">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>Qualified Answer
+                                        <input type="radio" value="Qualified Answer" name="conflict_resolution">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="ap-label">Please explain any “N” or “Q” answers.</label>
+                            <div class="ap-field">
+                                <textarea name="n_or_q_answers" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="simple-text">
+                                <p>THE SCHOOL does not discriminate on the basis of ethnicity, color, national or ethnic origin in the administration of
+                                its educational policies, admissions policies, scholarship and financial aid programs, and other school- administered
+                                programs.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div> -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="ap-field">
+                                    <label>Attach Father’s Signature</label>
+                                    <div id="Fsignature"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="ap-field">
+                                    <label>&nbsp;</label>
+                                    <input type="text" name="father_signature_date" placeholder="Date" class="date"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="ap-field">
+                                    <label>Attatch Mother’s Signature</label>
+                                    <div id="Msignature"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="ap-field">
+                                    <label>&nbsp;</label>
+                                    <input type="text" name="mother_signature_date" placeholder="Date" class="date"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="submit-btn-wrapper">
+                    <input type="submit" name="submit" value="Submit" id="submit">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        SignatureInput = function (oConfig) {
+            let sSelector = oConfig.selector;
+            // Storing config
+            this.oConfig = oConfig;
+            // Caching dom
+            this.oSelector = document.querySelector(sSelector);
+            if (this.oSelector) {
+                this.render();
+                this.attachEvents();
+            }
+        };
+
+        SignatureInput.prototype.drawOnCanvas = function (x, y) {
+            let prevX, prevY;
+            prevX = this.currX;
+            prevY = this.currY;
+            this.currX = x;
+            this.currY = y;
+
+            this.oCtx.beginPath();
+            this.oCtx.moveTo(prevX, prevY);
+            this.oCtx.lineTo(this.currX, this.currY);
+            this.oCtx.lineWidth = 2;
+            this.oCtx.strokeStyle = "#000000";
+            this.oCtx.stroke();
+            this.oCtx.closePath();
+        };
+
+        SignatureInput.prototype.copyToInput = function () {
+            const sImageData = this.oCanvas.toDataURL();
+            this.oInput.value = sImageData;
+        };
+
+        SignatureInput.prototype.attachEvents = function () {
+            this.oCanvas.addEventListener(
+                "mousemove",
+                function (ev) {
+                    ev.preventDefault();
+                    if (this.active) {
+                        let x = ev.offsetX;
+                        let y = ev.offsetY;
+                        this.drawOnCanvas(x, y);
+                    }
+                }.bind(this),
+                false
+            );
+
+            this.oCanvas.addEventListener(
+                "touchmove",
+                function (ev) {
+                    ev.preventDefault();
+                    let x = ev.targetTouches[0].clientX - ev.targetTouches[0].target.offsetLeft;
+                    let y = ev.targetTouches[0].clientY - ev.targetTouches[0].target.offsetTop;
+                    if (this.active) {
+                        this.drawOnCanvas(x, y);
+                    }
+                }.bind(this),
+                false
+            );
+
+            this.oCanvas.addEventListener(
+                "mousedown",
+                function (ev) {
+                    this.active = true;
+                    this.currX = ev.offsetX;
+                    this.currY = ev.offsetY;
+                }.bind(this),
+                false
+            );
+
+            this.oCanvas.addEventListener(
+                "touchstart",
+                function (ev) {
+                    ev.preventDefault();
+                    this.active = true;
+                    this.currX = ev.offsetX;
+                    this.currY = ev.offsetY;
+                }.bind(this),
+                false
+            );
+
+            this.oCanvas.addEventListener(
+                "mouseup",
+                function () {
+                    this.active = false;
+                    this.copyToInput();
+                }.bind(this),
+                false
+            );
+            this.oCanvas.addEventListener(
+                "touchend",
+                function () {
+                    this.active = false;
+                    this.copyToInput();
+                }.bind(this),
+                false
+            );
+            this.oCanvas.addEventListener(
+                "mouseout",
+                function () {
+                    this.active = false;
+                    this.copyToInput();
+                }.bind(this),
+                false
+            );
+
+            this.oClearBtn.addEventListener('click', this.clearCanvas.bind(this), false);
+        };
+
+        SignatureInput.prototype.clearCanvas = function () {
+            this.oCtx.clearRect(0, 0, this.oConfig.width, this.oConfig.height);
+        };
+
+        SignatureInput.prototype.render = function () {
+            let oClearBtn = document.createElement("button");
+            oClearBtn.innerHTML = '<svg width="20px" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>';
+            oClearBtn.type = "button";
+
+            let oCanvas = document.createElement("canvas");
+            oCanvas.width = this.oConfig.width;
+            oCanvas.height = this.oConfig.height;
+
+            oCanvas.className = "SignatureInputCanvas";
+            let oSigInputHidden = document.createElement("input");
+            oSigInputHidden.name = this.oConfig.inputName || "signature-input";
+            oSigInputHidden.type = "hidden";
+            // Caching for attaching events
+            this.oCanvas = oCanvas;
+            this.oClearBtn = oClearBtn;
+            // Caching for change events
+            this.oInput = oSigInputHidden;
+            // Context for drawing
+            this.oCtx = oCanvas.getContext("2d");
+
+            this.oSelector.appendChild(oCanvas);
+            this.oSelector.appendChild(oClearBtn);
+            this.oSelector.appendChild(oSigInputHidden);
+        };
+
+
+        if (window.innerWidth < 700) {
+            new SignatureInput({
+                selector: "#signature",
+                width: 300,
+                height: 150,
+                inputName: "Fsignature",
+                color: "#3399FF"
+            });
+        } else {
+            new SignatureInput({
+                selector: "#Fsignature",
+                width: 500,
+                height: 200,
+                inputName: "father_signature",
+                color: "#3399FF"
+            });
+        }
+
+        if (window.innerWidth < 700) {
+            new SignatureInput({
+                selector: "#Msignature",
+                width: 300,
+                height: 150,
+                inputName: "signature",
+                color: "#3399FF"
+            });
+        } else {
+            new SignatureInput({
+                selector: "#Msignature",
+                width: 500,
+                height: 200,
+                inputName: "mother_signature",
+                color: "#3399FF"
+            });
+        }
+
+
+
+    // Instantiate the input
+    </script>
+
+</body>
+
+</html>
